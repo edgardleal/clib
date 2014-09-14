@@ -6,7 +6,10 @@
 
 int main(int arg_count, char* args[])
 {
-    printf("%s\n", formate("%d/%m/%Y"));
+    char* date;
+    date = (char*)malloc(50 * sizeof(char) + 1);
+    formate("%d/%m/%Y", date);
+    printf("%s\n", date);
     int i = 0;
     for(i = 0; i < arg_count; i = i+1)
     {
@@ -14,5 +17,6 @@ int main(int arg_count, char* args[])
     }
     printf("Done");
     append_to_file("executions.txt", "A");
+
     return 0;
 }
